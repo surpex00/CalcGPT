@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const data = await response.json();
 
             if (response.ok) {
-                aiOutput.textContent = data.result;
+                aiOutput.innerHTML = marked.parse(data.result);
             } else {
                 aiOutput.textContent = `Error: ${data.error || 'Something went wrong.'}`;
             }
