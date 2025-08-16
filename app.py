@@ -1,7 +1,7 @@
 import os
 from dotenv import load_dotenv
 import google.generativeai as genai
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, render_template
 
 # Load environment variables (for local testing, Render handles them securely)
 load_dotenv()
@@ -18,7 +18,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def home():
-    return "CalcGPT AI API is running. Use /calculate for AI help."
+    return render_template('index.html')
 
 @app.route('/calculate', methods=['POST'])
 def calculate():

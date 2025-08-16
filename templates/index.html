@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CalcGPT Web</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>CalcGPT Web</h1>
+        <div class="input-section">
+            <input type="text" id="expressionInput" placeholder="Enter expression (e.g., 2+2, sin(pi/2))">
+            <button id="askAiButton">Ask AI Help</button>
+        </div>
+        <div class="output-section">
+            <pre id="aiOutput"></pre>
+            <div id="loadingIndicator" class="hidden">Calculating...</div>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
